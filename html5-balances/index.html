@@ -353,7 +353,7 @@ function calculateAll(boxId) {
     // Calcular Agua Endógena y Pérdidas Insensibles
     const aguaEndogena = horas < 20 ? horas * 20 : 400;
     const perdidasInsensibles = peso * horas * 0.5;
-    document.getElementById(`agua-endogena-box${boxId}`).value = aguaEndogena.toFixed(2);
+    document.getElementById(`agua-endogena-box${boxId}`).value = aguaEndogena.toFixed();
     document.getElementById(`perdidas-insensibles-box${boxId}`).value = perdidasInsensibles.toFixed();
 
     // Cálculos de fiebre y RPM
