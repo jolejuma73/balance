@@ -251,8 +251,8 @@
         // Calcular Agua Endógena y Pérdidas Insensibles
         const aguaEndogena = horas < 20 ? horas * 20 : 400;
         const perdidasInsensibles = peso * horas * 0.5;
-        document.getElementById(`agua-endogena-box${boxId}`).value = aguaEndogena.toFixed(2);
-        document.getElementById(`perdidas-insensibles-box${boxId}`).value = perdidasInsensibles.toFixed(2);
+        document.getElementById(`agua-endogena-box${boxId}`).value = aguaEndogena.toFixed();
+        document.getElementById(`perdidas-insensibles-box${boxId}`).value = perdidasInsensibles.toFixed();
 
         // Cálculos de fiebre y RPM
         calculateFiebreRPM(boxId, peso);
@@ -268,11 +268,11 @@
         const rpm25 = peso * (parseFloat(document.getElementById(`horas-rpm25-box${boxId}`).value) || 0) * 0.2;
         const rpm35 = peso * (parseFloat(document.getElementById(`horas-rpm35-box${boxId}`).value) || 0) * 0.3;
 
-        document.getElementById(`resultado-fiebre37-box${boxId}`).value = fiebre37.toFixed(2);
-        document.getElementById(`resultado-fiebre38-box${boxId}`).value = fiebre38.toFixed(2);
-        document.getElementById(`resultado-fiebre39-box${boxId}`).value = fiebre39.toFixed(2);
-        document.getElementById(`resultado-rpm25-box${boxId}`).value = rpm25.toFixed(2);
-        document.getElementById(`resultado-rpm35-box${boxId}`).value = rpm35.toFixed(2);
+        document.getElementById(`resultado-fiebre37-box${boxId}`).value = fiebre37.toFixed();
+        document.getElementById(`resultado-fiebre38-box${boxId}`).value = fiebre38.toFixed();
+        document.getElementById(`resultado-fiebre39-box${boxId}`).value = fiebre39.toFixed();
+        document.getElementById(`resultado-rpm25-box${boxId}`).value = rpm25.toFixed();
+        document.getElementById(`resultado-rpm35-box${boxId}`).value = rpm35.toFixed();
     }
 
     function calculateTotals(boxId) {
@@ -286,7 +286,7 @@
         // Añadir Agua Endógena a Total Ingresos
         const aguaEndogena = parseFloat(document.getElementById(`agua-endogena-box${boxId}`).value) || 0;
         totalIngresos += aguaEndogena;
-        document.getElementById(`total-ingresos-box${boxId}`).value = totalIngresos.toFixed(2);
+        document.getElementById(`total-ingresos-box${boxId}`).value = totalIngresos.toFixed();
 
         // Sumar todos las pérdidas
         const perdidasInputs = document.querySelectorAll(`#box-${boxId} .perdida`);
@@ -304,13 +304,13 @@
         const rpm35 = parseFloat(document.getElementById(`resultado-rpm35-box${boxId}`).value) || 0;
 
         totalPerdidas += perdidasInsensibles + fiebre37 + fiebre38 + fiebre39 + rpm25 + rpm35;
-        document.getElementById(`total-perdidas-box${boxId}`).value = totalPerdidas.toFixed(2);
+        document.getElementById(`total-perdidas-box${boxId}`).value = totalPerdidas.toFixed();
 
         // Calcular Balance
 const balance = totalIngresos - totalPerdidas;
 const balanceElement = document.getElementById(`balance-box${boxId}`);
 if (balanceElement) {
-    balanceElement.value = balance.toFixed(2);
+    balanceElement.value = balance.toFixed();
 
     // Cambiar color y tamaño según el balance
     if (balance > 0) {
@@ -342,7 +342,7 @@ function calculateSudorFiebreTqn(boxId) {
     // Actualizar el campo correspondiente
     const outputField = document.getElementById(`fuerafluidos-box${boxId}`);
     if (outputField) {
-        outputField.value = totalSudorFiebreTqn.toFixed(2); // Mostrar con dos decimales
+        outputField.value = totalSudorFiebreTqn.toFixed(); // Mostrar con dos decimales
     }
 }
 
@@ -354,7 +354,7 @@ function calculateAll(boxId) {
     const aguaEndogena = horas < 20 ? horas * 20 : 400;
     const perdidasInsensibles = peso * horas * 0.5;
     document.getElementById(`agua-endogena-box${boxId}`).value = aguaEndogena.toFixed(2);
-    document.getElementById(`perdidas-insensibles-box${boxId}`).value = perdidasInsensibles.toFixed(2);
+    document.getElementById(`perdidas-insensibles-box${boxId}`).value = perdidasInsensibles.toFixed();
 
     // Cálculos de fiebre y RPM
     calculateFiebreRPM(boxId, peso);
