@@ -27,6 +27,45 @@
         transform: scale(1.1); /* Aumentar el tamaño visual */
         transition: all 0.3s ease; /* Animación suave */
     }
+	 .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 15px;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs a {
+        white-space: nowrap;
+        padding: 10px 15px;
+        font-size: 16px;
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+    }
+
+    .input {
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 768px) {
+        .section {
+            padding: 10px;
+        }
+
+        .tabs a {
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+
+        table {
+            font-size: 12px;
+        }
+    }
 </style>
 
 
